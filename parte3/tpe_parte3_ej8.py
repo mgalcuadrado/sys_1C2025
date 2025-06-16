@@ -6,15 +6,15 @@ import soundfile as sf
 
 import funciones_tpe as func
 
-FACTOR_ACELERACION = 2
+FACTOR = 2
 RUTA_ARCHIVO_ORIGINAL_LENTO = "Picasso_hombre_5s.wav"
 RUTA_ARCHIVO_ACELERADO_DECIMACION_Y_VENTANEO = "Picasso_hombre_x2_decimacion.wav"
 RUTA_ARCHIVO_ACELERADO_LIBROSA = "Picasso_hombre_x2_librosa.wav"
 RUTA_ARCHIVO_ORIGINAL_RAPIDO = "Picasso_hombre_3s.wav"
 
 #### ACELERACIÓN DE LA SEÑAL ###
-func.Acelerar_audio_con_librosa(RUTA_ARCHIVO_ORIGINAL_LENTO, RUTA_ARCHIVO_ACELERADO_LIBROSA, FACTOR_ACELERACION)
-func.Acelerar_audio_con_decimacion_y_ventaneo(RUTA_ARCHIVO_ORIGINAL_LENTO, RUTA_ARCHIVO_ACELERADO_DECIMACION_Y_VENTANEO, FACTOR_ACELERACION)
+func.Acelerar_audio_con_librosa(RUTA_ARCHIVO_ORIGINAL_LENTO, RUTA_ARCHIVO_ACELERADO_LIBROSA, FACTOR)
+func.Acelerar_audio_con_decimacion_y_ventaneo(RUTA_ARCHIVO_ORIGINAL_LENTO, RUTA_ARCHIVO_ACELERADO_DECIMACION_Y_VENTANEO, FACTOR)
 
 ## Obtención de los vectores de data de los audios
 fs_original_lento, data_original_lento = wavfile.read(RUTA_ARCHIVO_ORIGINAL_LENTO)
