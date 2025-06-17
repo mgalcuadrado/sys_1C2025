@@ -12,7 +12,7 @@ RUTA_ARCHIVO_DESACELERADO_LIBROSA = "Picasso_desacelerado_librosa.wav"
 
 #### DESACELERACIÓN DE LA SEÑAL ###
 func.Acelerar_audio_con_librosa(RUTA_ARCHIVO_ORIGINAL_RAPIDO, RUTA_ARCHIVO_DESACELERADO_LIBROSA, FACTOR_DESACELERACION)
-func.Desacelerar_audio_con_expansion_y_pasabajos(RUTA_ARCHIVO_ORIGINAL_RAPIDO, RUTA_ARCHIVO_DESACELERADO_EXPANSION, FACTOR_DESACELERACION)
+func.Desacelerar_audio_con_expansion_y_pasabajos(RUTA_ARCHIVO_ORIGINAL_RAPIDO, RUTA_ARCHIVO_DESACELERADO_EXPANSION, int(1/FACTOR_DESACELERACION))
 
 ## Obtención de los vectores de data de los audios
 fs_original_lento, data_original_lento = wavfile.read(RUTA_ARCHIVO_ORIGINAL_LENTO)
@@ -29,5 +29,5 @@ func.Graficar_espectrograma_banda_angosta(data_original_rapido, fs_original_rapi
 ## Realización de espectrogramas con el eje de frecuencias acotado entre 0 y 2kHz
 func.Graficar_espectrograma_banda_angosta(data_original_lento, fs_original_lento, None, None, 0, 2000, "Espectrograma de la señal original (para frecuencias entre 0Hz y 2kHz)", "espectrograma_original_f0_2k.png", None)
 func.Graficar_espectrograma_banda_angosta(data_librosa, fs_librosa, None, None, 0, 2000, "Espectrograma de la señal ralentizada utilizando el módulo librosa (para frecuencias entre 0Hz y 2kHz)", "espectrograma_ralentizada_librosa_f0_2k.png", None)
-func.Graficar_espectrograma_banda_angosta(data_expansion, fs_expansion, None, None, 0, 2000,  "Espectrograma de la señal acelerada utilizando decimación y ventaneo (para frecuencias entre 0Hz y 2kHz)", "espectrograma_ralentizacion_expansion_f0_2k.png", None)
+func.Graficar_espectrograma_banda_angosta(data_expansion, fs_expansion, None, None, 0, 2000,  "Espectrograma de la señal ralentizada utilizando expansion (para frecuencias entre 0Hz y 2kHz)", "espectrograma_ralentizacion_expansion_f0_2k.png", None)
 func.Graficar_espectrograma_banda_angosta(data_original_rapido, fs_original_rapido, None, None, 0, 2000, "Espectrograma de la señal original rápida (para frecuencias entre 0Hz y 2kHz)", "espectrograma_original_rapido_f0_2k.png", None)
